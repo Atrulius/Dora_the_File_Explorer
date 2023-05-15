@@ -4,9 +4,7 @@
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 
-#include <Windows.h>
-
-#include "File.h"
+#include "Folder.h"
 
 class Window {
 
@@ -16,9 +14,10 @@ private:
 	sf::VideoMode videoMode;
 	sf::Event event;
 
-	std::string sCurrent_Path;
+	Folder Current_Folder;
+	Folder::Content Current_Folder_Content;
 
-	std::vector<File> Selected_Files;
+	vector<File> Selected_Files;
 
 	int iMouse_X;
 	int iMouse_Y;
@@ -38,7 +37,7 @@ public:
 	void Update();
 	void Refresh();
 
-	void Create(std::string sFile_Name);
+	void Create(string File_Name);
 	void Delete_Selection();
 
 	bool Mouse_Moved();

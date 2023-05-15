@@ -2,15 +2,16 @@
 
 #include <iostream>
 #include <fstream>
+#include <filesystem>
 
 using namespace std;
-
+using namespace filesystem;
 
 class File {
 
 public:
 
-	File(string );
+	File(string Path);
 
 	string sPath;
 	string sLocation;
