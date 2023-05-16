@@ -3,10 +3,12 @@
 Folder::Content::Content() {
 
 }
-Folder::Content::Content(vector<string> Names) {
+Folder::Content::Content(string Root_Path, vector<string> Names) {
+
+	Path = Root_Path;
 
 	for (int i = 0; i < Names.size(); i++)
-		if (filesystem::is_directory(sPath + Names[i]))
+		if (filesystem::is_directory(Root_Path + "\\" + Names[i]))
 			Folders.push_back(Names[i]);
 		else
 			Files.push_back(Names[i]);
@@ -61,9 +63,7 @@ Folder::Content Folder::Get_Content() {
 	vector<string> Names;
 
 	for (const auto& entry : directory_iterator(sPath))
-	{
 		Names.push_back(entry.path().filename().string());
-	}
 
-	return Content(Names);
+	return Content(sPath, Names);
 }

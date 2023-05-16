@@ -14,6 +14,8 @@ private:
 	sf::VideoMode videoMode;
 	sf::Event event;
 
+	sf::Font font;
+
 	Folder Current_Folder;
 	Folder::Content Current_Folder_Content;
 
@@ -36,6 +38,8 @@ public:
 
 	void Update();
 	void Refresh();
+
+	void Draw_Items();
 
 	void Create(string File_Name);
 	void Delete_Selection();

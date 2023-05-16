@@ -11,7 +11,9 @@ public:
 	public:
 
 		Content();
-		Content(vector<string> Names);
+		Content(string Root_Path, vector<string> Names);
+
+		string Path;
 
 		vector<string> Files;
 		vector<string> Folders;

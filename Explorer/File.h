@@ -3,6 +3,8 @@
 #include <iostream>
 #include <fstream>
 #include <filesystem>
+#include <cstring>
+#include <Windows.h>
 
 using namespace std;
 using namespace filesystem;
